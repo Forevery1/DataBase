@@ -52,7 +52,7 @@
     *
     * $table 表名
     * $data  数据 array
-    * 返回 0|1  失败|成功
+    * 返回 bool  失败|成功
     */
     DB::table($table)->insert($data)
   
@@ -122,7 +122,7 @@
     /**
     * 删除所有 [ 条件删除结合where ]
     * $table 表名
-    * 返回 0|1  失败|成功
+    * 返回 bool  失败|成功
     */
     DB::table($table)->delete()
     
@@ -131,7 +131,7 @@
     /**
     * $table 表名
     * $data  数据 array
-    * 返回 0|1  失败|成功
+    * 返回 bool  失败|成功
     */
     DB::table($table)
       ->where($column, $operator , $value)
