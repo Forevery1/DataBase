@@ -24,7 +24,6 @@ defined('DB_CONFIG_PATH') or define('DB_CONFIG_PATH', "Define_Forevery");
 class DB {
 
     protected $builder;
-    protected $show_error;
 
     /**
      * @param $table
@@ -161,8 +160,14 @@ class DB {
         return (new First($this->builder))->build();
     }
 
+    /**
+     * @param $pagesize
+     * @return \Database\Paginates\Page
+     */
     public function paginate($pagesize) {
         $page = isset($_GET['page']) ? $_GET['page'] : 1;
         return (new Paginate($this->builder))->build($pagesize, $page);
     }
+
+
 }

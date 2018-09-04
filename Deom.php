@@ -61,3 +61,4 @@ $result = DB::table('user')
 
 print_r($result->data);
 echo $result->links();
+
