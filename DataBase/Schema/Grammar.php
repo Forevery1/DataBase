@@ -31,6 +31,7 @@ class Grammar {
 
         // 构建传入的参数处理
         $this->compileStartParams(...$params);
+
         // 拼接原生 SQL
         $sql = $this->toSql();
         // 重组预处理 SQL 的参数（包括的where语句里的）
@@ -53,11 +54,14 @@ class Grammar {
             return '';
         }
         $wheres = 'where ';
+        $type = '';
         foreach ($this->builder->wheres as $where) {
-            $wheres .= "{$where['column']} {$where['operator']} ? and ";
+            $type = $where['type'] . ' ';
+            $wheres .= "{$where['column']} {$where['operator']} ? {$where['type']} ";
             $this->builder->binds[] = $where['value'];
         }
-        return rtrim($wheres, 'and ');
+
+        return rtrim($wheres, $type);
     }
 
 

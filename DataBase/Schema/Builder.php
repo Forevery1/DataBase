@@ -38,6 +38,7 @@ class Builder {
         return $this->primaryKey ?: 'id';
     }
 
+
     public function getExecuteResults($sql, $parameters = [], $method = 'query') {
         // 预处理 SQL
         $statement = $this->dbh->prepare($sql);

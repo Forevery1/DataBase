@@ -106,12 +106,31 @@ class DB {
         if (2 === func_num_args()) {
             list($column, $value) = [$column, $operator];
             $operator = '=';
+            $type = 'and';
         }
 
         $this->builder->wheres[] = compact(
-            'column', 'operator', 'value'
+            'column', 'operator', 'value', 'type'
         );
+        return $this;
+    }
 
+    /**
+     * @param $column
+     * @param null $operator
+     * @param null $value
+     * @return $this
+     */
+    public function whereOr($column, $operator = null, $value = null) {
+        if (2 === func_num_args()) {
+            list($column, $value) = [$column, $operator];
+            $operator = '=';
+            $type = 'or';
+        }
+
+        $this->builder->wheres[] = compact(
+            'column', 'operator', 'value', 'type'
+        );
         return $this;
     }
 
@@ -168,6 +187,5 @@ class DB {
         $page = isset($_GET['page']) ? $_GET['page'] : 1;
         return (new Paginate($this->builder))->build($pagesize, $page);
     }
-
 
 }
