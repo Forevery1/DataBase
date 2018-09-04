@@ -1,0 +1,12 @@
+<?php
+/**
+ * Created by IntelliJ IDEA.
+ * User: Forevery
+ * Date: 2018/8/20
+ * Time: 22:30
+ */
+return [
+    'database' => 'hlr_wz',
+    'password' => 'blbq520yq',
+    'prefix' => 'tb_'
+];
