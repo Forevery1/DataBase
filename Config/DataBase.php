@@ -8,5 +8,6 @@
 return [
     'database' => 'hlr_wz',
     'password' => 'root',
-    'prefix' => 'tb_'
+    'prefix' => 'tb_',
+    'charset' => 'gbk'
 ];
