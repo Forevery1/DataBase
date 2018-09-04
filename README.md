@@ -35,9 +35,11 @@
   
   2. 配置文件必须为 [ DataBase.php]
   
-  3. 需要配置那个字段配置即可 [ 例 : [查看配置文件DEMO](https://github.com/Forevery1/DataBase/blob/master/Config/DataBase.php) ]
+  3. 需要配置那个字段配置即可
   
 ```
+
+[查看配置文件DEMO](https://github.com/Forevery1/DataBase/blob/master/Config/DataBase.php)
 
 ### 3 . 方法
 ```php
