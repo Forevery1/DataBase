@@ -39,9 +39,11 @@ class DB {
         if (strcmp(DB_CONFIG_PATH, "Define_Forevery") == 0) $load_config = include "Config/Config.php";
         $def_conf = include "Config/Config.php";
         $config = array_merge($def_conf, $load_config);
+        print_r($config);
         $connect = "mysql:host=" . $config['hostname'] . ";dbname=" . $config['database'];
+        $conf = array(PDO::MYSQL_ATTR_INIT_COMMAND => "set names {$config['charset']}");
         try {
-            $this->builder->dbh = new PDO($connect, $config['username'], $config['password']);;
+            $this->builder->dbh = new PDO($connect, $config['username'], $config['password'], $conf);;
         } catch (\PDOException $exception) {
             echo "数据库连接失败!";
         }
