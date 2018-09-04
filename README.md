@@ -64,7 +64,7 @@
     DB::table($table)->query()
     
     /**
-    * 条件查询
+    * where条件查询
     * $table 表名
     * $column 字段
     * $operator 运算符
@@ -75,7 +75,21 @@
       ->where($column, $operator , $value)
       ->where($column, $value) //默认操作符为 “=”
       ->query()
-      
+    
+    /**
+    * whereOr条件查询
+    * $table 表名
+    * $column 字段
+    * $operator 运算符
+    * $value 值
+    * 返回 array
+    */
+    DB::table($table)
+      ->where($column, $operator , $value)
+      ->whereOr($column, $value)
+      ->where($column, $operator , $value)
+      ->query()
+            
     /**
     * find查询
     * $table 表名

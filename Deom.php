@@ -9,10 +9,8 @@
 use DataBase\DB;
 
 require "DataBase/vendor/autoload.php";
-
 //定义配置文件路径
 define("DB_CONFIG_PATH", __DIR__ . '/Config');
-
 
 /**
  *插入
@@ -21,7 +19,6 @@ $data = [
     'id' => 1,
     'name' => 'Forevery'
 ];
-
 DB::table('user')->insert($data);
 
 /**
@@ -29,6 +26,7 @@ DB::table('user')->insert($data);
  */
 $result = DB::table('user')
     ->where('id', '>', 0)
+    ->whereOr('name', '1')
     ->query();
 print_r($result);
 
@@ -39,7 +37,6 @@ DB::table('user')
     ->where('id', '>', 0)
     ->delete();
 
-
 /**
  * 更新
  */
@@ -47,7 +44,6 @@ $update = [
     'id' => 1,
     'name' => 'Forevery_100'
 ];
-
 DB::table('user')
     ->where('id', '>', 0)
     ->update($update);
@@ -58,7 +54,6 @@ DB::table('user')
 $result = DB::table('user')
     ->where('id', '>', 0)
     ->paginate(5);
-
 print_r($result->data);
 echo $result->links();
 
