@@ -135,5 +135,6 @@
       数据 ： $data->data
       分页 ： $data->links()
       
-  [查看DEMO](https://github.com/Forevery1/DBHelper/blob/master/src/main/java/Demo.java)
 ```
+
+[查看DEMO](https://github.com/Forevery1/DataBase/blob/master/Deom.php)
