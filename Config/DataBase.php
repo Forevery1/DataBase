@@ -7,6 +7,6 @@
  */
 return [
     'database' => 'hlr_wz',
-    'password' => 'blbq520yq',
+    'password' => 'root',
     'prefix' => 'tb_'
 ];

@@ -19,7 +19,7 @@ use PDO;
 use Database\Query\Delete;
 
 ini_set("error_reporting", "E_ALL & ~E_NOTICE");
-defined('DB_CONFIG_PATH') or define('DB_CONFIG_PATH', "Define_Forever");
+defined('DB_CONFIG_PATH') or define('DB_CONFIG_PATH', "Define_Forevery");
 
 class DB {
 
@@ -37,7 +37,7 @@ class DB {
     public function __construct($from) {
         $this->builder = new Builder();
         $load_config = include DB_CONFIG_PATH . "/DataBase.php";
-        if (strcmp(DB_CONFIG_PATH, "Define_Forever") == 0) $load_config = include "Config/Config.php";
+        if (strcmp(DB_CONFIG_PATH, "Define_Forevery") == 0) $load_config = include "Config/Config.php";
         $def_conf = include "Config/Config.php";
         $config = array_merge($def_conf, $load_config);
         $connect = "mysql:host=" . $config['hostname'] . ";dbname=" . $config['database'];
